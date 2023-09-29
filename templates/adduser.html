@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<link rel="stylesheet" href="static/mystyle.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success">Add User</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          {{message}}
+          <form action="" method="post">
+              {% csrf_token %}
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="full_name">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Email ID</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" name="email_id">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Mobile Number</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="mob_num">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">State</label>
+                <select id="" class="form-control" name="state">
+                    <option value="">----Select State----</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="UP">UP</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Haryana">Haryana</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Password</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="password">
+              </div>
+              <div class="mb-3">
+                <div align="center">
+                    <input type="submit" value="Add User" name="adduser" class="btn btn-success">
+                </div>
+            </div>
+          </form>
+        </div>    
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock  %}

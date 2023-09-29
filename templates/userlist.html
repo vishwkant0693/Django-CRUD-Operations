@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success">User List</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email ID</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for value in userlist %}
+                    <tr>
+                        <td>{{value.id}}</td>
+                        <td>{{value.full_name}}</td>
+                        <td>{{value.email_id}}</td>
+                        <td>{{value.mob_num}}</td>
+                        <td>{{value.state}}</td>
+                        <td>{{value.password}}</td>
+                        <td>
+                            <a href="" class="btn btn-success">Edit</a>&nbsp;
+                            <a href="" class="btn btn-danger">Delete</a>&nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+{% endblock 'content' %}
